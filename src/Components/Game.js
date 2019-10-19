@@ -4,7 +4,7 @@ import GameBoard from "./GameBoard";
 class Game extends Component{
     constructor(props) {
         super(props);
-        this.state = this.startState();
+        this.state = this.initialState();
     }
     handleClick(square){
         if (this.state.board[square] === null) {
@@ -16,14 +16,14 @@ class Game extends Component{
             });
         }
     }
-    startState(){
+    initialState(){
         return {
             board: Array(9).fill(null),
             currentPlayer: "X"
         }
     }
     reset (){
-        this.setState(this.startState())
+        this.setState(this.initialState())
     }
     render(){
         return (
